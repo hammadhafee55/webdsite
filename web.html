@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HammadS BLOGS - Explore insightful blogs on health, education, news and more." />
+  <meta name="keywords" content="HammadS BLOGS, blog, health, education, news, informative, articles" />
+  <meta name="author" content="Hammad Hafeez Daula" />
+  <title>HammadS BLOGS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>HammadS BLOGS</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#editor">Write Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to HammadS BLOGS</h2>
+    <p>Truthful, informative, and inspiring blogs that keep you enlightened and empowered.</p>
+  </section>
+
+  <section id="blogs" class="blogs">
+    <article class="blog-card">
+      <img src="images/health1.jpg" alt="Health Blog Thumbnail">
+      <h3>Health: Secrets of a Balanced Life</h3>
+      <p>Discover the science and soul behind healthy living. Stay fit, eat clean, and think positively.</p>
+      <a href="blog1.html">Read More</a>
+    </article>
+
+    <article class="blog-card">
+      <img src="images/education1.jpg" alt="Education Blog Thumbnail">
+      <h3>Education: The New Era of Learning</h3>
+      <p>Explore how technology is reshaping modern education. Tips, tools, and trends for future learners.</p>
+      <a href="blog2.html">Read More</a>
+    </article>
+  </section>
+
+  <section id="editor" class="editor">
+    <h2>✍️ Write & Edit Blog</h2>
+    <p>Use the box below to write and edit your blog content. You can copy/paste it later into your blog pages.</p>
+    <textarea id="blogEditor" placeholder="Start writing your blog here..."></textarea>
+    <button onclick="saveBlog()">Save Draft</button>
+    <p id="status"></p>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm Hammad Hafeez Daula, a passionate blogger and researcher who believes in the power of knowledge. I write about health, education, current affairs, and truths that matter. My mission is to empower minds with valuable information.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form action="#" method="post">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 HammadS BLOGS. All rights reserved.</p>
+    <p>SEO Optimized | Fast Load | Mobile Responsive</p>
+  </footer>
+
+  <script>
+    function saveBlog() {
+      const content = document.getElementById('blogEditor').value;
+      localStorage.setItem('blogDraft', content);
+      document.getElementById('status').innerText = '✔️ Draft saved locally!';
+    }
+
+    window.onload = function() {
+      const saved = localStorage.getItem('blogDraft');
+      if (saved) document.getElementById('blogEditor').value = saved;
+    }
+  </script>
+</body>
+
+</html>
